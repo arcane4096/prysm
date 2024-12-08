@@ -915,13 +915,12 @@ func (c *capabilityCache) save(cs []string) {
 	c.capabilitiesLock.Lock()
 	defer c.capabilitiesLock.Unlock()
 
-	if c.capabilities == nil {
-		c.capabilities = make(map[string]interface{})
+	capabilities := make(map[string]interface{})
+	for _, capability := range cs {
+		capabilities[capability] = struct{}{}
 	}
 
-	for _, capability := range cs {
-		c.capabilities[capability] = struct{}{}
-	}
+	c.capabilities = capabilities
 }
 
 func (c *capabilityCache) has(capability string) bool {
