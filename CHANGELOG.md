@@ -73,6 +73,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Improvements to HTTP response handling. [pr](https://github.com/prysmaticlabs/prysm/pull/14673)
 - Updated `Blobs` endpoint to return additional metadata fields.
 - Made QUIC the default method to connect with peers.
+- Fixed the potential issues of inconsistency that might arise during the processing of engine_exchangeCapabilities. [PR](https://github.com/prysmaticlabs/prysm/pull/14700)
 
 ### Deprecated
 
